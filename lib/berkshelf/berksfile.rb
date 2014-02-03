@@ -125,7 +125,11 @@ module Berkshelf
 
       name = metadata.name.presence || File.basename(File.expand_path(path))
 
-      add_dependency(name, nil, path: path, metadata: true)
+      if name.starts_with?("dr_")
+        add_dependency(name, nil, path: path, metadata: true, git: "http://github.digitalriverws.net/ChefCookbooks/" + name + ".git")
+      else
+        add_dependency(name, nil, path: path, metadata: true)
+      end
     end
 
     # Add a Berkshelf API source to use when building the index of known cookbooks. The indexes will be
