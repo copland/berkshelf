@@ -126,8 +126,10 @@ module Berkshelf
       name = metadata.name.presence || File.basename(File.expand_path(path))
      
       if name.start_with?("dr_")
+        puts "Name started with dr_ !"
         add_dependency(name, nil, path: path, metadata: true, git: "http://github.digitalriverws.net/ChefCookbooks/" + name + ".git")
       else
+        puts "Not a dr cookbook!"
         add_dependency(name, nil, path: path, metadata: true)
       end
     end
