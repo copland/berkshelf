@@ -127,7 +127,7 @@ module Berkshelf
       puts "Cookbook: " + name
       if name.start_with?("dr_")
         puts "Name started with dr_ !"
-        add_dependency(name, nil, path: path, metadata: true, git: "http://github.digitalriverws.net/ChefCookbooks/" + name + ".git")
+        add_dependency(name, nil, metadata: true, git: "http://github.digitalriverws.net/ChefCookbooks/" + name + ".git")
       else
         puts "Not a dr cookbook!"
         add_dependency(name, nil, path: path, metadata: true)
