@@ -124,7 +124,7 @@ module Berkshelf
       metadata = Ridley::Chef::Cookbook::Metadata.from_file(metadata_path)
 
       name = metadata.name.presence || File.basename(File.expand_path(path))
-      puts name
+      puts "Namey wamey: " + name
       #if name.starts_with?("dr_")
       #  add_dependency(name, nil, path: path, metadata: true, git: "http://github.digitalriverws.net/ChefCookbooks/" + name + ".git")
      # else
